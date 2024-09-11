@@ -572,9 +572,9 @@ def rotating_plot(Y, B, state_names, show_points=False, legend=True, filename='r
     plt.show()
     return ax
 
-
-def plot_latent_timeseries(Y, B, state_names):
-    plt.figure(figsize=(19,5))
+# CL: made fig_size an argument
+def plot_latent_timeseries(Y, B, state_names, figsize=(19,5)):
+    plt.figure(figsize=figsize)
     cmap = plt.get_cmap('Pastel1', np.max(B) - np.min(B) + 1)
     im = plt.imshow([B],aspect=600,cmap=cmap, vmin=np.min(B) - 0.5, vmax=np.max(B) + 0.5)
     #cbar = plt.colorbar(ticks=np.arange(len(state_names)))
