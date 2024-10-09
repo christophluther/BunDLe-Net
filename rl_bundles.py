@@ -10,10 +10,11 @@ from sklearn.preprocessing import LabelEncoder
 # load data
 
 # for final layer, simply use df[768:]
+filename = "test_oct_2"
 
-X = pd.read_csv("data_2/racetrack-loop-highway/sac/test_high_neurons.csv").to_numpy()
-B = pd.read_csv("data_2/racetrack-loop-highway/sac/test_high_actions.csv").to_numpy()
-O = pd.read_csv("data_2/racetrack-loop-highway/sac/test_high_obs.csv").to_numpy()
+X = pd.read_csv(f"data_2/racetrack-loop-highway/sac/{filename}_neurons.csv").to_numpy()
+B = pd.read_csv(f"data_2/racetrack-loop-highway/sac/{filename}_actions.csv").to_numpy()
+# O = pd.read_csv("data_2/racetrack-loop-highway/sac/test_sep_30_obs.csv").to_numpy()
 
 # last 256 neurons (final layer in policy function)
 X = X[:, -256:]
